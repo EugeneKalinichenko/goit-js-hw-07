@@ -26,6 +26,9 @@ function createGalleryItem(images) {
 };
 
 function showingBigImage(event) { 
+  if (!event.target.classList.contains("gallery__image")) {
+    return;
+  }
   
   basicLightbox.create(`<img width="1400" height="900" src="${event.target.dataset.source}">`).show()
   
